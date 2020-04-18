@@ -1,0 +1,116 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter une nouvelle entreprise
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" id="quickForm" [formGroup]="entrepriseForm">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="nomEntreprise">Nom<span class="text-danger"> *</span></label>
+          <input type="text" formControlName="nom" class="form-control" 
+            placeholder="Nom de l'entreprise">
+            <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="alert alert-danger">
+              <div *ngIf="nom.errors.required">
+                nom obligatoire
+              </div>   
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="Entrepriseadresse">Adresse <span class="text-danger"> *</span></label>
+          <input type="text" formControlName="adresse" class="form-control" id="adresse"
+            placeholder="Adresse de l'entreprise">
+            <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched)" class="alert alert-danger">
+              <div *ngIf="adresse.errors.required">
+                Adresse obligatoire
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label>Téléphone<span class="text-danger">*</span></label>
+          <input type="number" formControlName="Tel" class="form-control" id="tel"
+          placeholder="Telephone de l'entreprise">
+          <div *ngIf="Tel.invalid && (Tel.dirty || Tel.touched)" class="alert alert-danger">
+            <div *ngIf="Tel.errors.required">
+             Téléphone de l'entreprise obligatoire
+            </div>
+          </div>      
+        </div>
+      
+        <div class="form-group">
+            <label>Type<span class="text-danger">*</span></label>
+            <select  formControlName="type" class="form-control">
+              <option value="PME" selected="selected">PME</option>
+              <option value="Startup">Startup</option>
+              <option value="Incubateur">Incubateur</option>
+              <option value="TGE">TGE</option>
+              <option value="TPE">TPE</option>
+              <option value="Multinationale">Multinationale</option>
+              <option value="Banque">Banque</option>
+            </select>         
+        </div>
+
+        <div class="form-group">
+          <label for="mail">Mail <span class="text-danger"> *</span></label>
+          <input type="email" formControlName="mail" class="form-control" id="mail"
+            placeholder="Mail">
+            <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger">
+              <div *ngIf="mail.errors.required">
+                Mail obligatoire
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label >Vis à vis<span class="text-danger"> *</span></label>
+          <input type="text" formControlName="visavis" class="form-control" 
+            placeholder="Vis à vis">
+            <div *ngIf="visavis.invalid && (visavis.dirty || visavis.touched)" class="alert alert-danger">
+            <div *ngIf="visavis.errors.required">
+              Vis à vis obligatoire
+            </div>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label >Poste<span class="text-danger"> *</span></label>
+            <input type="text" formControlName="postevisavis" class="form-control" 
+              placeholder="Poste">
+              <div *ngIf="postevisavis.invalid && (postevisavis.dirty || postevisavis.touched)" class="alert alert-danger">
+                <div *ngIf="postevisavis.errors.required">
+                  Poste obligatoire
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Téléphone personnel<span class="text-danger">*</span></label>
+              <input type="number" formControlName="telvisavis" class="form-control" id="telvisavis"
+              placeholder="Telephone de l'entreprise">
+              <div *ngIf="telvisavis.invalid && (telvisavis.dirty || telvisavis.touched)" class="alert alert-danger">
+                <div *ngIf="telPerso.errors.required">
+                 Téléphone personnel obligatoire
+                </div>
+               </div> 
+            </div>
+
+          <div class="form-group">
+            <label for="mailVisAvis">Mail vis à vis <span class="text-danger"> *</span></label>
+            <input type="email" formControlName="mailvisavis" class="form-control" id="mailvisavis"
+              placeholder="Mail vis à vis">
+              <div *ngIf="mailvisavis.invalid && (mailvisavis.dirty || mailvisavis.touched)" class="alert alert-danger">
+                <div *ngIf="adresse.errors.required">
+                  Mail vis à vis obligatoire
+                </div>
+              </div>
+          </div>     
+          
+        </div>   
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" (click)="addNewEntreprise()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>

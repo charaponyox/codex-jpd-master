@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Entreprises</h3>
+     
+      </div>
+       <div class="card-body table-responsive p-0" >
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Mail</th>
+              <th>Teléphone</th>
+              <th>Type</th>
+              <th>visAvis</th>
+              <th>poste</th>
+              <th>telPerso</th>
+              <th>MailPerso</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let entreprise of entreprises" role="row" class="odd">
+                <td class="sorting_1">{{entreprise.nom}}</td>
+                <td>{{entreprise.adresse}}</td>
+                <td>{{entreprise.mail}}</td>
+                <td>{{entreprise.Tel}}</td>
+                
+                 <td>{{entreprise.type}}</td>
+                 <td>{{entreprise.visavis}}</td>
+                 <td>{{entreprise.postevisavis}}</td>
+                 <td>{{entreprise.telvisavis}}</td>
+                 <td>{{entreprise.mailvisavis}}</td>
+
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;"  (click)="deleteMethod(entreprise._id)"></i>
+                 </td>
+              </tr> 
+            </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+
+      </div>
+
+      <!-- /.card-footer-->
+    </div>
+  </div>

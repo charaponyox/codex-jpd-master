@@ -23,6 +23,7 @@ import { BaseDeDonnesComponent } from './base-de-donnes/base-de-donnes.component
 import { EntreprisesAddComponent } from './base-de-donnes/entreprises-add/entreprises-add.component';
 import { EntreprisesListComponent } from './base-de-donnes/entreprises-list/entreprises-list.component';
 import { EntreprisesUpdateComponent } from './base-de-donnes/entreprises-update/entreprises-update.component';
+import { EntreprisesEditComponent } from './base-de-donnes/entreprises-edit/entreprises-edit.component';
 
 const apiUrl = environment.apiUrl;  
 
@@ -42,7 +43,8 @@ const apiUrl = environment.apiUrl;
     BaseDeDonnesComponent,
     EntreprisesAddComponent,
     EntreprisesListComponent,
-    EntreprisesUpdateComponent
+    EntreprisesUpdateComponent,
+    EntreprisesEditComponent
   ],
   imports: [
     BrowserModule,
@@ -59,8 +61,8 @@ const apiUrl = environment.apiUrl;
       config: {
         tokenGetter: function  tokenGetter() {
              return     localStorage.getItem('token');},
-        whitelistedDomains: ['ac024976.ngrok.io'],
-        blacklistedRoutes: ['ac024976.ngrok.io/auth/login']
+        whitelistedDomains: ['031d3fdc.ngrok.io'],
+        blacklistedRoutes: ['031d3fdc.ngrok.io/auth/login']
       }
     })
   ],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EntreprisesService } from 'src/app/utils/services/entreprises.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-entreprises-list',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EntreprisesListComponent implements OnInit {
   entreprises: any = []
-  constructor(private entrepriseService:EntreprisesService, private toastr: ToastrService) { }
+  constructor(private entrepriseService:EntreprisesService, private toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.refreshEntreprises();
@@ -30,6 +31,10 @@ export class EntreprisesListComponent implements OnInit {
           this.toastr.error(e.error.message);
         })
      }
+  }
+
+  goToeditPage(id){
+    this.router.navigate(['/update-entreprise', id]);
   }
 
 }

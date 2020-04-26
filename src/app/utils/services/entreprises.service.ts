@@ -29,4 +29,10 @@ export class EntreprisesService {
     return this.http.delete<any>(this.apiUrl + '/entreprise/' + id , this.httpOptions);
 
   }
+  getEntreprise(id):Observable<Entreprise>{
+    return this.http.get<Entreprise>(this.apiUrl + '/entreprise/'+ id,this.httpOptions);
+  }
+  editEntreprise(id):Observable<Entreprise>{
+    return this.http.put<Entreprise>(this.apiUrl + '/entreprise/'+ id,this.httpOptions);
+  }
 }

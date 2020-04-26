@@ -31,10 +31,14 @@
                  <td>{{entreprise.postevisavis}}</td>
                  <td>{{entreprise.telvisavis}}</td>
                  <td>{{entreprise.mailvisavis}}</td>
-
                  <td>
-                    <i class="fa fa-trash" style="color: red;cursor: pointer;"  (click)="deleteMethod(entreprise._id)"></i>
+                  <i class="fa fa-wrench" style="color: green;cursor: pointer;"  (click)="goToeditPage(entreprise._id)"></i>
+               </td>
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;"  (click)="deleteMethod(entreprise._id)">
+                      <a [routerLink]="['/update-entreprise/:id']"></a></i>
                  </td>
+                 
               </tr> 
             </tbody>
         </table>
